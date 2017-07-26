@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f2fb0cb-67b6-4e88-a7ef-c4e716fae3c8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Piotrek/palindrom.php" afterPath="$PROJECT_DIR$/Piotrek/palindrom.php" />
-    </list>
+    <list default="true" id="4f2fb0cb-67b6-4e88-a7ef-c4e716fae3c8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,12 +110,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501063380752</updated>
-      <workItem from="1501063382179" duration="1285000" />
+      <workItem from="1501063382179" duration="1462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1285000" />
+    <option name="totallyTimeSpent" value="1462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1054" extended-state="0" />
