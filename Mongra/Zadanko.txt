@@ -1,0 +1,92 @@
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+
+<div class="text" id="identyfikator">
+	<p>Lorem ipsum dolor.</p>
+	<p>Nihil, nostrum, corrupti.</p>
+	<p>Error, hic, voluptatum.</p>
+</div>
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+
+<ul>
+	<li class="klasa01"></li>
+	<li class="klasa02"></li>
+	<li class="klasa03"></li>
+	<li class="klasa04"></li>
+	<li class="klasa05"></li>
+	<li class="klasa06"></li>
+	<li class="klasa07"></li>
+	<li class="klasa08"></li>
+	<li class="klasa09"></li>
+	<li class="klasa10"></li>
+</ul>
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+
+<ul>
+	<li class="klasa1"></li>
+	<li class="klasa2"></li>
+	<li class="klasa3"></li>
+	<li class="klasa4"></li>
+	<li class="klasa5"></li>
+	<li class="klasa6"></li>
+	<li class="klasa7"></li>
+	<li class="klasa8"></li>
+	<li class="klasa9"></li>
+	<li class="klasa10"></li>
+</ul>
+
+------------------------------------------------------------------------------
+emmet: 
+------------------------------------------------------------------------------
+
+<div>
+	<div class="jeden"></div>
+	<div class="drugiobok"></div>
+</div>
