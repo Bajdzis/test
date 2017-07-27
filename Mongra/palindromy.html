@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+        <script>
+            var zmienna="Kajak";
+            console.log (zmienna);
+            zmienna = zmienna.toLowerCase();
+           /*zmienna2 = zmienna.split("") .reverse() .join("") .split(" ") .join("") .toLowerCase();*/
+            console.log (zmienna);
+            //console.log (zmienna2);
+            var dlugosc=(zmienna.length-1);
+            var polowa=dlugosc/2;
+            var j=false;
+            for(var p=0; p<polowa; p++)
+            {
+                if (zmienna[p]==zmienna[dlugosc-p])
+                {
+                    j=true;
+                }
+                else
+                {
+                    j=false
+                    break;
+                }
+            }
+                 if (j==false)
+                {
+                    console.log ("Wyraz nie jest palindromem");
+                }
+                else 
+                {
+                    console.log ("Wyraz jest palindromem");
+                }
+
+
+
+        </script>
+</body>
+</html>
