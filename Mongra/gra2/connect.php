@@ -1,26 +1,42 @@
 <?php
+
+
+/* ----- Profil gracza i jego zasoby ------ */
+function show_profil_user(){
+global $out;
+
+    $out['id']=$_SESSION['id'];
+    $out['user']=$_SESSION['user'];
+    $out['drewno']=$_SESSION['drewno'];
+    $out['kamien']=$_SESSION['kamien'];
+    $out['zboze']=$_SESSION['zboze'];
+    $out['email']=$_SESSION['email'];
+    $out['dnipremium']=$_SESSION['dnipremium'];
+
+$out['template']="user.php";
+
+
+}
+
 /* ----- Pokazanie formularza logowania ------ */
 function show_login_form(){
+    global $out;
 
     session_start();
     if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
     {
         show_profil_user();
-        exit();
+   
+    }else{
+        $out['template']="login_form.php";
     }
 
 }
 
-/* ----- Profil gracza i jego zasoby ------ */
-function show_profil_user(){
-include_once 'user.php';
-
-
-}
 
 /* ----- Połączenie z bazą danych w MySQL -------- */
 function connect(){
-
+    global $out;
     $host="localhost";
     $db_user="root";
     $db_password="";
@@ -39,13 +55,12 @@ function connect(){
 
 /* ------ Logowanie ------ */
 function login($login, $haslo){
-
+    global $out;
     session_start();
 
     if ((!isset($_POST['login'])) || (!isset($_POST['haslo'])))
     {
-        header("Location: index.php?page=login");
-        exit();
+        $out['template']="login_form.php";
     }
 
     $polaczenie = connect();
@@ -66,14 +81,13 @@ function login($login, $haslo){
                 $_SESSION['email']=$wiersz['email'];
                 $_SESSION['dnipremium']=$wiersz['dnipremium'];
 
-                unset($_SESSION['blad']);
                 $rezultat->free();
-                 include_once 'user.php';
+                 show_profil_user();
            }
            else
            {
-            $_SESSION['blad']='<span style="color:red">Nieprawidłowy login lub hasło! </span>';
-             include_once 'login_form.php';
+            $out['blad']='Nieprawidłowy login lub hasło!';
+            show_login_form();
            }
        }
 
@@ -84,10 +98,10 @@ function login($login, $haslo){
 
 /* ------ Wyloguj ----- */
 function logout(){
+    global $out;
+    $out['succecLogout'] = true;
     session_start();
     session_unset();
-    header("Location: index.php");
-
 }
 
 
