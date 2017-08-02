@@ -1,0 +1,302 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*-------------------------------------------------------------- */
+
+/* Colours:
+    #726C66;
+    #F4C091;
+    #F2E4D8;
+    #CEB49C;
+    #BFB4AA; */
+
+body
+{
+background-image: url("images/wood.png");
+background-color: #CEB49C;
+color: #726C66;
+font-family: 'Montserrat', sans-serif;
+font-size: 15px;
+
+}
+
+#container
+{
+    background-color: #F2E4D8;
+    width: 996px;
+    border: 2px solid #CEB49C;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    position: static;
+}
+
+#baner
+{
+    height: 156px;
+    width: 956px;
+    background-color: #F2E4D8;
+    color: #CEB49C;
+    text-shadow: 1px 1px #726C66;
+    padding: 20px;
+    font-size: 54px;
+    font-family: 'Pangolin', cursive;
+    float: left;
+    position: relative;
+    position: left;
+
+}
+/* ----- Zawartość banera ----- */
+    .logowanie
+    {
+        width: 270px;
+        height: 146px;
+        font-size: 13px;
+        float: right;
+        margin-right: 0px;
+        position: relative;
+        position: right;
+    }
+
+    #menu
+    {
+        clear:both;
+        height: 63px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .button
+    {
+        width: 186px;
+        background-color: #CEB49C;
+        border-right: 2px solid #F2E4D8;
+        height: 44px;
+        float: left;
+        color: #F2E4D8;
+        font-size: 28px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 14px;
+        padding-bottom: 5px;
+        font-family: 'Pangolin', cursive;
+        text-shadow: 1px 1px #726C66;
+        margin: auto;
+        box-shadow: 3px 3px #837D77;
+        text-align: center;
+
+
+    }
+    .button:hover
+    {
+    background-color: #F4C091; 
+    }
+
+    #log_in
+    {
+    background-color: #CEB49C;
+    border-top: 2px solid #F2E4D8;
+    border-left: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+    color: #F2E4D8;
+    text-shadow: 1px 1px #726C66;
+    box-shadow: 3px 3px #837D77;
+    }
+
+    #log_in:hover
+    {
+        background-color: #F4C091; 
+    }
+
+/* ------ Koniec zawartości banera ------ */
+#content
+{
+    width: 900px;
+    height: 100%;
+    padding: 20px;
+    clear: both;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#footer
+{
+    width: auto;
+    height: 50px;
+    background-color: #CEB49C;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 10px;
+    clear: both;
+    position: relative;
+    bottom: 0; 
+}
+
+#user
+{
+width: 600px;
+height: 400px;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+position: relative;
+position: center;
+font-size: 30px;
+padding-top: 15px;
+}
+
+    #welcome
+    {
+    width: 600px;
+    height: 83px;
+    background-color: #CEB49C;
+    border-bottom: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    }
+
+    .row
+    {
+    width: 600px;
+    height: 83px;
+    background-color: #CEB49C;
+    border-bottom: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    }
+
+    .roww
+    {
+    width: 600px;
+    height: 83px;
+    background-color: #F4C091; 
+    clear:both;
+    border-bottom: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    }
+
+    .col
+    {
+    height:83px;
+    width: 198px;
+    background-color: #CEB49C;
+    float: left;
+    border-bottom: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    }
+
+    .coll
+    {
+    height: 83px;
+    width: 200px;
+    background-color: #F4C091; 
+    float: left;
+    border-right: 2px solid #F2E4D8;
+    border-left: 2px solid #F2E4D8;
+    border-bottom: 2px solid #F2E4D8;
+    font-family: 'Pangolin', cursive;
+    text-shadow: 1px 1px #726C66;
+    color: #F2E4D8;
+    }
+
+#image_village
+{
+    border: 2px solid #CEB49C;
+    position: relative;
+
+}
+
+.icon
+{
+    max-height: 70px;
+}
+/* ----- Koniec tabeli z danymi gracza ----- */
+
+h1
+{
+    font-size: 32;
+}
+
+table
+{
+    border: 2px solid #CEB49C;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #726C66;
+    text-shadow: none;
+    position: relative;
+    position: center;
+
+}
+
+tr
+{
+    border: 2px solid #CEB49C; 
+    padding: 5px;
+    text-align: center;
+
+}
+
+td
+{
+    border: 2px solid #CEB49C; 
+    padding: 5px;
+    text-align: center;
+}
+
