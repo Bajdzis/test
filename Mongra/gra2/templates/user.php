@@ -25,4 +25,4 @@
 </div>
 <?php else: ?>
 <h1><i>Aby wyświetlić swój profil musisz się zalogować</i> </br></br></h1>
-<?php endif; ?>
+<?php endif ?>

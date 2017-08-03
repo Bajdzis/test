@@ -19,5 +19,5 @@
     <div class="logowanie">
     <h1>Jesteś zalogowany</h1>
 </div>
-<?php endif; ?>
+<?php endif ?>
 

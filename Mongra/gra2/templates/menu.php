@@ -6,5 +6,5 @@
         <a href="index.php?page=logout"> <div class="button"> Wyloguj </div> </a>
     <? else: ?>
         <a href="index.php?page=game"> <div class="button"> O grze </div> </a>
-    <?php endif; ?>
+    <?php endif ?>
 </div>

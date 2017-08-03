@@ -13,7 +13,7 @@
     <div id="container">
         <div id="baner">
             <b>OSADNICY </b> online
-            <?php include 'login_form.php';?>
+            <?php include 'login_form.php'?>
         </div>
         <?php include 'menu.php' ?>
         <div id="content">
