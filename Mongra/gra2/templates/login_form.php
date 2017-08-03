@@ -2,7 +2,6 @@
 <!--- Formularz logowania -->
 
 <div class="logowanie">
-    <h2> Zaloguj się! </h2>
     <form action="index.php?page=login" method="post">
         <p> Login
         <input type="text" name="login" /> </p>

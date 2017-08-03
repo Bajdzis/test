@@ -23,6 +23,7 @@
         <p><b>Dni premium:</b> <?= $out['dnipremium'] ?> </p>
     </div>
 </div>
+</br> </br>
 <?php else: ?>
 <h1><i>Aby wyświetlić swój profil musisz się zalogować</i> </br></br></h1>
 <?php endif ?>

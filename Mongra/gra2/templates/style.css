@@ -51,31 +51,36 @@ table {
     #CEB49C;
     #BFB4AA; */
 
+/* -------------------w.i.p. Przerobić wszystko na flexy----------------------------------------------- */
+
+/* ------ DEFAULT ----- */
+
 body
 {
-background-image: url("images/wood.png");
-background-color: #CEB49C;
-color: #726C66;
-font-family: 'Montserrat', sans-serif;
-font-size: 15px;
-
+    background-image: url("images/wood.png");
+    background-color: #CEB49C;
+    color: #726C66;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-align: justify;
 }
 
 #container
 {
     background-color: #F2E4D8;
-    width: 996px;
+    width: 60%;
     border: 2px solid #CEB49C;
     margin-right: auto;
     margin-left: auto;
     margin-top: 0px;
     position: static;
+    min-height: 70%;
 }
 
 #baner
 {
-    height: 156px;
-    width: 956px;
+    height: 45%;
+    width: 95%;
     background-color: #F2E4D8;
     color: #CEB49C;
     text-shadow: 1px 1px #726C66;
@@ -84,36 +89,37 @@ font-size: 15px;
     font-family: 'Pangolin', cursive;
     float: left;
     position: relative;
-    position: left;
 
 }
 /* ----- Zawartość banera ----- */
     .logowanie
     {
-        width: 270px;
-        height: 146px;
-        font-size: 13px;
+        width: 30%;
+        height: 30%;
+        font-size: 20px;
         float: right;
         margin-right: 0px;
         position: relative;
-        position: right;
+        display: flex;
+        justify-content: left;
+        
     }
 
     #menu
     {
         clear:both;
-        height: 63px;
+        height: 15%;
         margin-right: auto;
         margin-left: auto;
+        position: relative;
     }
-
+        
     .button
     {
-        width: 186px;
+        width: 20%;
         background-color: #CEB49C;
         border-right: 2px solid #F2E4D8;
-        height: 44px;
-        float: left;
+        height: 15%;
         color: #F2E4D8;
         font-size: 28px;
         padding-left: 5px;
@@ -125,49 +131,49 @@ font-size: 15px;
         margin: auto;
         box-shadow: 3px 3px #837D77;
         text-align: center;
-
-
+        position: relative;
     }
+
     .button:hover
     {
-    background-color: #F4C091; 
+        background-color: #F4C091; 
     }
 
     #log_in
     {
-    background-color: #CEB49C;
-    border-top: 2px solid #F2E4D8;
-    border-left: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    font-size: 20px;
-    color: #F2E4D8;
-    text-shadow: 1px 1px #726C66;
-    box-shadow: 3px 3px #837D77;
+        background-color: #CEB49C;
+        border-top: 2px solid #F2E4D8;
+        border-left: 2px solid #F2E4D8;
+        font-family: 'Pangolin', cursive;
+        font-size: 28px;
+        color: #F2E4D8;
+        text-shadow: 1px 1px #726C66;
+        box-shadow: 3px 3px #837D77;
+        position: relative;
     }
-
     #log_in:hover
     {
         background-color: #F4C091; 
     }
 
 /* ------ Koniec zawartości banera ------ */
+
 #content
 {
-    width: 900px;
-    height: 100%;
+    width: 95%;
+    height: 98%;
     padding: 20px;
-    clear: both;
     display:flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
-
 
 #footer
 {
     width: auto;
-    height: 50px;
+    height: 15%;
     background-color: #CEB49C;
     font-family: 'Pangolin', cursive;
     text-shadow: 1px 1px #726C66;
@@ -175,84 +181,93 @@ font-size: 15px;
     font-size: 25px;
     text-align: center;
     padding-top: 10px;
-    clear: both;
     position: relative;
     bottom: 0; 
 }
 
+/* Tabelka z zasobami użytkownika */
 #user
 {
-width: 600px;
-height: 400px;
-margin-right: auto;
-margin-left: auto;
-text-align: center;
-position: relative;
-position: center;
-font-size: 30px;
-padding-top: 15px;
+    width: 70%;
+    height: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    position: relative;
+    position: center;
+    font-size: 30px;
+    padding-top: 15px;
 }
 
-    #welcome
-    {
-    width: 600px;
-    height: 83px;
+#welcome
+{
+    width: 99%;
+    height: 25%;
     background-color: #CEB49C;
     border-bottom: 2px solid #F2E4D8;
     font-family: 'Pangolin', cursive;
     text-shadow: 1px 1px #726C66;
     color: #F2E4D8;
-    }
+    position: relative;
+}
 
     .row
     {
-    width: 600px;
-    height: 83px;
-    background-color: #CEB49C;
-    border-bottom: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    text-shadow: 1px 1px #726C66;
-    color: #F2E4D8;
+        width: 99%;
+        height: 25%;
+        background-color: #CEB49C;
+        border-bottom: 2px solid #F2E4D8;
+        font-family: 'Pangolin', cursive;
+        text-shadow: 1px 1px #726C66;
+        color: #F2E4D8;
+        position: relative;
     }
 
     .roww
     {
-    width: 600px;
-    height: 83px;
-    background-color: #F4C091; 
-    clear:both;
-    border-bottom: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    text-shadow: 1px 1px #726C66;
-    color: #F2E4D8;
+        width: 99%;
+        height: 25%;
+        background-color: #F4C091; 
+        border-bottom: 2px solid #F2E4D8;
+        font-family: 'Pangolin', cursive;
+        text-shadow: 1px 1px #726C66;
+        color: #F2E4D8;
+        position: relative;
     }
 
     .col
     {
-    height:83px;
-    width: 198px;
-    background-color: #CEB49C;
-    float: left;
-    border-bottom: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    text-shadow: 1px 1px #726C66;
-    color: #F2E4D8;
+        height: 25%;
+        width: 33%;
+        background-color: #CEB49C;
+        border-bottom: 2px solid #F2E4D8;
+        font-family: 'Pangolin', cursive;
+        text-shadow: 1px 1px #726C66;
+        color: #F2E4D8;
+        position: relative;
     }
 
     .coll
     {
-    height: 83px;
-    width: 200px;
-    background-color: #F4C091; 
-    float: left;
-    border-right: 2px solid #F2E4D8;
-    border-left: 2px solid #F2E4D8;
-    border-bottom: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    text-shadow: 1px 1px #726C66;
-    color: #F2E4D8;
+        height: 25%;
+        width: 32.5%;
+        background-color: #F4C091; 
+        border-right: 2px solid #F2E4D8;
+        border-left: 2px solid #F2E4D8;
+        border-bottom: 2px solid #F2E4D8;
+        font-family: 'Pangolin', cursive;
+        text-shadow: 1px 1px #726C66;
+        color: #F2E4D8;
+        position: relative;
     }
 
+        .icon
+        {
+            max-width: 40%;
+            position: relative;
+        }
+
+/* ----- Koniec tabeli z danymi gracza ----- */
 #image_village
 {
     border: 2px solid #CEB49C;
@@ -260,17 +275,12 @@ padding-top: 15px;
 
 }
 
-.icon
-{
-    max-height: 70px;
-}
-/* ----- Koniec tabeli z danymi gracza ----- */
-
 h1
-{
-    font-size: 32;
+{    font-size: 32;
+
 }
 
+/* tabela z użytkownikami i inne tabele */
 table
 {
     border: 2px solid #CEB49C;
@@ -290,6 +300,7 @@ tr
     border: 2px solid #CEB49C; 
     padding: 5px;
     text-align: center;
+    position: relative;
 
 }
 
@@ -298,5 +309,210 @@ td
     border: 2px solid #CEB49C; 
     padding: 5px;
     text-align: center;
+    position: relative;
 }
 
+a
+{
+    text-decoration: none;
+}
+
+
+
+
+
+/* ----- KONIEC DOMYŚLNYCH ----- */
+
+/* ----- DLA EKRANÓW POWYŻEJ 1000 PX ----- */
+
+@media screen and (min-width: 1000px)
+{
+    .button
+    {
+        float: left;
+    }
+
+    #content
+    {
+        clear: both;
+    }
+
+    .roww
+    {
+        clear: both;
+    }
+    
+    .col
+    {
+        float: left;
+    }
+
+    .coll 
+    {
+        float: left;
+    }
+}
+
+/* ----- KONIEC STYLI DLA EKRANÓW POWYŻEJ 500PX ----- */
+
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+
+/* ----- DLA WSZYSTKICH PONIŻEJ 1000 PX ----- */
+
+@media screen and (max-width: 1000px)
+{
+        body
+    {
+
+        font-size: 15px;
+    }
+
+        #container
+    {
+        width: 80%;
+    }
+
+    #baner
+    {
+        height: 50%;
+        width: 96%;
+        padding: 10px;
+        font-size: 34px;
+
+    }
+
+
+        /* ----- Zawartość banera ----- */
+        .logowanie
+        {
+            width: 30%;
+            height: 100%;
+        }
+
+        #menu
+        {
+            width: calc(34% - 70px);
+            float: left;
+            margin-left: 0;
+        }
+
+
+        .button
+        {
+            height: 100%;
+            font-size: 30px;
+            border-bottom: 2px solid #F2E4D8;
+            text-decoration: none;
+            width: 70%;
+
+        }
+
+
+        #log_in
+        {
+            border-bottom: 2px solid #F2E4D8;
+            border-right: 2px solid #F2E4D8;
+        }
+
+
+/* ------ Koniec zawartości banera ------ */
+
+    #content
+    {
+        width: calc(70% - 70px);
+        float: right !important;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 30px;
+        text-align: justify;
+    }
+
+
+
+    #footer
+    {
+        height: 10%;
+        clear: both;
+    }
+
+
+    /* Tabelka z zasobami użytkownika */
+    #user
+    {
+        width: 80%;
+        height: 60%;
+        position: relative;
+        position: center;
+    }
+
+
+        #welcome
+        {
+            width: 80%;
+            height: 60%;
+        }
+
+
+        .row
+        {
+            width: 80%;
+        }
+
+
+        .roww
+        {
+            width: 80%;
+        }
+
+
+        .col
+        {
+            width: 80%;
+        }
+
+        .coll
+        {
+            width: 80%;
+            border-right: none;
+            border-left: none;
+        }
+
+/* tabela z użytkownikami i inne tabele */
+    table
+    {
+        position: left;
+
+    }
+}
+
+#image_village
+{
+    max-width: 90%;
+}
+
+/* ----- KONIEC STYLI DLA MAŁYCH EKRANÓW ----- */
+
+/* -------------------------------------------------------------------------- */
+
+/* ----- WYDRUK ----- */
+
+@media print 
+{
+
+    body
+    {
+        filter: grayscale(100%);
+    }
+
+    .icon
+    {
+        filter: grayscale(90%)
+    }
+
+}
+
+/* ----- KONIEC WYDRUKU ----- */
