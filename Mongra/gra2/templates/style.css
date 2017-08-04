@@ -55,6 +55,7 @@ table {
 
 /* ------ DEFAULT ----- */
 
+
 body
 {
     background-image: url("images/wood.png");
@@ -63,6 +64,12 @@ body
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     text-align: justify;
+}
+
+::selection
+{
+    background: #726C66;
+    color: #CEB49C;
 }
 
 #container
@@ -84,7 +91,7 @@ body
     background-color: #F2E4D8;
     color: #CEB49C;
     text-shadow: 1px 1px #726C66;
-    padding: 20px;
+    padding: 10px;
     font-size: 54px;
     font-family: 'Pangolin', cursive;
     float: left;
@@ -124,7 +131,7 @@ body
         font-size: 28px;
         padding-left: 5px;
         padding-right: 5px;
-        padding-top: 14px;
+        padding-top: 10px;
         padding-bottom: 5px;
         font-family: 'Pangolin', cursive;
         text-shadow: 1px 1px #726C66;
@@ -132,6 +139,9 @@ body
         box-shadow: 3px 3px #837D77;
         text-align: center;
         position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .button:hover
@@ -162,7 +172,7 @@ body
 {
     width: 95%;
     height: 98%;
-    padding: 20px;
+    padding: 10px;
     display:flex;
     justify-content: center;
     flex-direction: column;
@@ -173,7 +183,7 @@ body
 #footer
 {
     width: auto;
-    height: 15%;
+    height: 20%;
     background-color: #CEB49C;
     font-family: 'Pangolin', cursive;
     text-shadow: 1px 1px #726C66;
@@ -181,8 +191,9 @@ body
     font-size: 25px;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px;
     position: relative;
-    bottom: 0; 
+    bottom: 0;
 }
 
 /* Tabelka z zasobami użytkownika */
@@ -197,18 +208,9 @@ body
     position: center;
     font-size: 30px;
     padding-top: 15px;
-}
-
-#welcome
-{
-    width: 99%;
-    height: 25%;
-    background-color: #CEB49C;
-    border-bottom: 2px solid #F2E4D8;
-    font-family: 'Pangolin', cursive;
-    text-shadow: 1px 1px #726C66;
-    color: #F2E4D8;
-    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
     .row
@@ -221,6 +223,7 @@ body
         text-shadow: 1px 1px #726C66;
         color: #F2E4D8;
         position: relative;
+        padding: 10px;
     }
 
     .roww
@@ -233,6 +236,7 @@ body
         text-shadow: 1px 1px #726C66;
         color: #F2E4D8;
         position: relative;
+        padding: 10px;
     }
 
     .col
@@ -245,6 +249,9 @@ body
         text-shadow: 1px 1px #726C66;
         color: #F2E4D8;
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
     }
 
     .coll
@@ -259,6 +266,9 @@ body
         text-shadow: 1px 1px #726C66;
         color: #F2E4D8;
         position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
         .icon
@@ -421,13 +431,13 @@ a
 
     #content
     {
-        width: calc(70% - 70px);
+        width: calc(70% - 40px);
         float: right !important;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        margin-left: 30px;
+        margin-left: 10px;
         text-align: justify;
     }
 
@@ -448,13 +458,6 @@ a
         position: relative;
         position: center;
     }
-
-
-        #welcome
-        {
-            width: 80%;
-            height: 60%;
-        }
 
 
         .row
