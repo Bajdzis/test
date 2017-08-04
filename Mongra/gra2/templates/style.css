@@ -129,10 +129,7 @@ body
         height: 15%;
         color: #F2E4D8;
         font-size: 28px;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 10px;
-        padding-bottom: 5px;
+        padding: 10px 5px 5px 5px;
         font-family: 'Pangolin', cursive;
         text-shadow: 1px 1px #726C66;
         margin: auto;
@@ -142,6 +139,7 @@ body
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        float: left;
     }
 
     .button:hover
@@ -178,6 +176,7 @@ body
     flex-direction: column;
     align-items: center;
     position: relative;
+    clear: both;
 }
 
 #footer
@@ -196,86 +195,63 @@ body
     bottom: 0;
 }
 
-/* Tabelka z zasobami użytkownika */
-#user
+
+
+/* ------------------------------------- */
+
+.user
 {
-    width: 70%;
-    height: 50%;
-    margin-right: auto;
+    min-width: 30px;
     margin-left: auto;
-    text-align: center;
-    position: relative;
-    position: center;
+    margin-right: auto;
+    font-family: 'Pangolin', cursive;
     font-size: 30px;
-    padding-top: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    background-color: #CEB49C;
+    color: #F2E4D8;
+    text-shadow: 1px 1px #726C66;
 }
 
-    .row
+    .user__row
     {
-        width: 99%;
-        height: 25%;
-        background-color: #CEB49C;
+        text-align: center;
         border-bottom: 2px solid #F2E4D8;
-        font-family: 'Pangolin', cursive;
-        text-shadow: 1px 1px #726C66;
-        color: #F2E4D8;
-        position: relative;
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .roww
-    {
-        width: 99%;
-        height: 25%;
-        background-color: #F4C091; 
-        border-bottom: 2px solid #F2E4D8;
-        font-family: 'Pangolin', cursive;
-        text-shadow: 1px 1px #726C66;
-        color: #F2E4D8;
-        position: relative;
-        padding: 10px;
-    }
-
-    .col
-    {
-        height: 25%;
-        width: 33%;
-        background-color: #CEB49C;
-        border-bottom: 2px solid #F2E4D8;
-        font-family: 'Pangolin', cursive;
-        text-shadow: 1px 1px #726C66;
-        color: #F2E4D8;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-content: space-between;
-    }
-
-    .coll
-    {
-        height: 25%;
-        width: 32.5%;
-        background-color: #F4C091; 
-        border-right: 2px solid #F2E4D8;
-        border-left: 2px solid #F2E4D8;
-        border-bottom: 2px solid #F2E4D8;
-        font-family: 'Pangolin', cursive;
-        text-shadow: 1px 1px #726C66;
-        color: #F2E4D8;
-        position: relative;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-        .icon
+        .user__row--content
         {
-            max-width: 40%;
-            position: relative;
+            display: flex;
+            padding-top: 0;
+            padding-bottom: 0;
         }
+
+        .user__row--differentColor
+        {
+            background-color: #F4C091; 
+        }
+
+
+    .user__content 
+    {
+        width: 33.3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .user__content--different
+        {
+            background-color: #F4C091; 
+            border-right: 2px solid #F2E4D8;
+            border-left: 2px solid #F2E4D8;
+        }
+
+            .icon
+            {
+                max-width: 20%;
+                position: relative;
+            }
 
 /* ----- Koniec tabeli z danymi gracza ----- */
 #image_village
@@ -333,37 +309,6 @@ a
 
 /* ----- KONIEC DOMYŚLNYCH ----- */
 
-/* ----- DLA EKRANÓW POWYŻEJ 1000 PX ----- */
-
-@media screen and (min-width: 1000px)
-{
-    .button
-    {
-        float: left;
-    }
-
-    #content
-    {
-        clear: both;
-    }
-
-    .roww
-    {
-        clear: both;
-    }
-    
-    .col
-    {
-        float: left;
-    }
-
-    .coll 
-    {
-        float: left;
-    }
-}
-
-/* ----- KONIEC STYLI DLA EKRANÓW POWYŻEJ 500PX ----- */
 
 
 /* ------------------------------------------------------------------------------------------------------- */
@@ -416,6 +361,7 @@ a
             border-bottom: 2px solid #F2E4D8;
             text-decoration: none;
             width: 70%;
+            float: none;
 
         }
 
@@ -439,6 +385,7 @@ a
         align-items: center;
         margin-left: 10px;
         text-align: justify;
+        clear: none;
     }
 
 
@@ -449,40 +396,11 @@ a
         clear: both;
     }
 
+.user
+{
+    font-size: 15px;
+}
 
-    /* Tabelka z zasobami użytkownika */
-    #user
-    {
-        width: 80%;
-        height: 60%;
-        position: relative;
-        position: center;
-    }
-
-
-        .row
-        {
-            width: 80%;
-        }
-
-
-        .roww
-        {
-            width: 80%;
-        }
-
-
-        .col
-        {
-            width: 80%;
-        }
-
-        .coll
-        {
-            width: 80%;
-            border-right: none;
-            border-left: none;
-        }
 
 /* tabela z użytkownikami i inne tabele */
     table
@@ -511,6 +429,10 @@ a
         filter: grayscale(100%);
     }
 
+    #container
+    {
+        width: 100%;
+    }
     .icon
     {
         filter: grayscale(90%)

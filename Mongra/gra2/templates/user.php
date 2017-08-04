@@ -1,27 +1,26 @@
 <?php if (isset($out['id'])): ?>
 
 <!--- Profil użytkownika i jego zasoby -->
-<div id="user">
-    <div class="roww"><h2> Witaj <?=$out['user']?>! </h2> </div>
-    <div class="items">
-        <div class="col">
-        <div> <?= image("drewno.png")  ?> </div>
+<div class="user">
+    <div class="user__row user__row--differentColor"><h2> Witaj <?=$out['user']?>! </h2> </div>
+    <div class="user__row user__row--content">
+        <div class="user__content">
+            <div> <?= image("drewno.png")  ?> </div>
             <?= $out['drewno'] ?>
         </div>
-        <div class="coll">
+        <div class="user__content user__content--different">
             <div> <?= image("kamien.png")  ?> </div>
             <?= $out['kamien'] ?>
-
         </div>
-        <div class="col">
+        <div class="user__content">
             <div> <?= image("zboze.png")  ?> </div>
             <?= $out['zboze'] ?>
         </div>
     </div>
-    <div class="roww">
+    <div class="user__row user__row--differentColor">
         <p><b>Email:</b> <?= $out['email'] ?> </p>
     </div>
-    <div class="row">
+    <div class="user__row">
         <p><b>Dni premium:</b> <?= $out['dnipremium'] ?> </p>
     </div>
 </div>
