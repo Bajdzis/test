@@ -1,0 +1,455 @@
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<div id="formLoginAndCreate" style="display:flex;">
+    <div style="width:50%;">
+<h3>Zaloguj się</h3>
+
+<form onsubmit="login();return false;">
+<label>
+    Login
+    <input id="login2" type="text" required>
+</label>
+<br>
+
+<label>
+    Hasło
+    <input id="password2" type="password" required>
+</label>
+
+
+<br>
+
+<input type="submit" class="btn btn-primary" value="login">
+
+</form>
+</div>
+
+<div style="width:50%;">
+    <h3>Lub zarejestruj</h3>
+
+<form onsubmit="createAccount();return false;">
+
+<label>
+    Login
+<input id="login" type="text" required>
+</label>
+<br>
+
+<label>
+    Hasło
+<input id="password" type="password" required>
+</label>
+<br>
+
+<label>
+    Waga
+<input id="weightAccount" type="number" required>
+</label>
+<br>
+
+<label>
+    Dzienne zapotrzebowanie kaloryczne
+<input id="calcAccount" type="number" required>
+</label>
+<br>
+
+<input type="submit" class="btn btn-primary"  value="create account">
+
+</form>
+</div>
+
+</div>
+<div id="allTables" style="display:none;">
+    <select id="allDays">
+            <option value="-1">Dziś</option>
+    </select>
+<form onsubmit="addProductAndEaten();return false;">
+<table class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            <th rowspan="2" style="text-align: center;vertical-align: middle;"> <i class="mdi mdi-clock"></i> </th>
+            <th colspan="6">Produkt</th>
+            <th colspan="2">Zjedzone</th>
+            <th></th>
+        </tr>
+        <tr>
+ 
+            <th>Nazwa</th>
+            <th><i class="mdi mdi-weight"></i> w ile gramach </th>
+            <th><i class="mdi mdi-hamburger"></i> jest tluszczy </th>
+            <th><i class="mdi mdi-candycane"></i> jest weglowodanów </th>
+            <th><i class="mdi mdi-leaf"></i> jest białko </th>
+            <th><i class="mdi mdi-battery-charging-80"></i>  kaloryczność </th>
+            <th><i class="mdi mdi-weight"></i> gramy</th>
+            <th><i class="mdi mdi-battery-charging-80"></i> kalorie</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tableData">
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td></td>
+        <td style="position:relative;"><input type="text" autocomplete="off" id="name" onkeyup="getSuggest();">
+        <input type="hidden" id="product_id" value="-1">
+          <div id="products">
+
+  </div>
+  </td>
+        <td><input oninput="refreshCaloriesData();" type="text" value="100" id="weight" onkeyup="document.getElementById('product_id').value = -1;"> </td>
+        <td><input oninput="refreshCaloriesData();" type="text" id="fat" onkeyup="document.getElementById('product_id').value = -1;"></td>
+
+        <td><input oninput="refreshCaloriesData();" type="text" id="carbohydrates" onkeyup="document.getElementById('product_id').value = -1;"></td>
+        <td><input oninput="refreshCaloriesData();" type="text" id="protein" onkeyup="document.getElementById('product_id').value = -1;"></td>
+
+        <td id="calIn100g"></td>
+        <td><input oninput="refreshCaloriesData();" type="text" id="eaten"></td>
+        <td id="calEaten"></td>
+        <td><input type="submit" class="btn btn-primary"></td>
+    </tr>
+    </tfoot>
+</table>
+<h2 style="text-align: center;">Podsumowanie</h2>
+<table class="table table-bordered" style="width:50%;margin:0 auto;">
+<tr>
+    <th></th>
+    <th>od</th>
+    <th>zjedzono</th>
+    <th>do</th>
+</tr>
+<tr>
+    <td>Białko</td>
+    <td id="eatenProteinMin">71</td>
+    <td id="eatenProtein">xxx</td>
+    <td id="eatenProteinMax">127,8</td>
+</tr>
+<tr>
+    <td>Tłuszcze</td>
+    <td id="eatenFatMin">35,5</td>
+    <td id="eatenFat">xxx</td>
+    <td id="eatenFatMax">71</td>
+</tr>
+<tr>
+    <td>Weglowodany</td>
+    <td id="eatenCarbohydratesMin">173,65</td>
+    <td id="eatenCarbohydrates">xxx</td>
+    <td id="eatenCarbohydratesMax">274,825</td>
+</tr>
+
+<tr>
+    <td>Średnia kaloryczność w 100 gramach</td>
+    <td id="divCalcIn100" colspan="3">0</td>
+</tr>
+</table>
+
+<h2 style="text-align: center;">Ustawienia</h2>
+
+
+<div style="width:50%; margin:0 auto; display:flex">
+
+    <div style="width:50%">
+        Twoja waga
+        <input type="number" id="newWeight" onchange="accountUpdate()">
+    </div>
+    <div style="width:50%">
+        Twoje zapotrzebowanie kaloryczne
+        <input type="number" id="newCalc" onchange="accountUpdate()">
+    </div>
+
+</div>
+
+
+
+</form>
+</div>
+<style>
+    #products{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        border: 1px solid #000;
+    }
+    #products > div{
+        padding:5px;
+        cursor:pointer;
+    }
+    #products > div[data-id="-1"]{
+        background: #ffc849;
+        color: #000 !important;
+    }
+    #products > div[data-id="-1"] span{
+        color: #000 !important;
+    }
+    #products > div:hover{
+        background:#f5f5f5;
+    }
+    body{
+        background: rgb(76, 175, 80);
+    }
+    .table{
+        background: rgba(255, 255, 255, 0.8);
+        margin:20px;
+        max-width: calc(100% - 40px);
+    }
+</style>
+<script>
+function changeDay(dayId){
+
+}
+function createAccount(){
+    var login =  document.getElementById('login').value;
+    var pass = document.getElementById('password').value;
+    var weight = document.getElementById('weightAccount').value;
+    var calc = document.getElementById('calcAccount').value;
+    ajax('/dieta/index.php?action=createUser&mail=' + login + '&password=' + pass + '&weight=' + weight + '&calc=' + calc).then(function(data){
+        alert(data.text);
+    });
+}
+
+function login(){
+    var login =  document.getElementById('login2').value;
+    var pass = document.getElementById('password2').value;
+    ajax('/dieta/index.php?action=login&mail=' + login + '&password=' + pass).then(function(data){
+        alert(data.text);
+        console.log(data.text);
+        refreshList();
+    });
+}
+function getSuggest(){
+    var name = document.getElementById("name").value;
+    var list = document.getElementById("products");
+    ajax('/dieta/index.php?action=getSuggest&name='+name).then(function(data){
+        var products = JSON.parse(data.text);
+        console.log(products);
+        var html = "";
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            var calIn100g = product.fat*9+(product.carbohydrates+product.protein)*4;
+
+            html += '<div onclick="setProduct(this)" data-id="'+product.ID+'" data-fat="'+product.fat+'" data-name="'+product.name+'" data-carbohydrates="'+product.carbohydrates+'" data-protein="'+product.protein+'">';
+            html += '<strong>'+product.name+"</strong><span>"+(calIn100g.toFixed(2))+' cal</span><br><span style="color:#ccc">( ';
+            html += "Tł:"+product.fat+" ";
+            html += "Węg:"+product.carbohydrates+" ";
+            html += "Biał:"+product.protein+" ) ";
+            html += "</span>";
+
+            html += "</div>";
+        }
+console.log(html);
+        list.innerHTML = html;
+
+    });
+
+}
+function deleteEaten(id){
+    if( confirm("Czy napewno usunąć ?") === false){
+        return;
+    }
+    ajax('/dieta/index.php?action=deleteEaten&id='+id).then(function(data){
+        console.log(data);
+        refreshList();
+    });
+}
+function setProduct(input){
+    document.getElementById('product_id').value = input.dataset.id;
+    document.getElementById('name').value = input.dataset.name;
+
+    document.getElementById('weight').value = 100;
+    document.getElementById('carbohydrates').value = input.dataset.carbohydrates;
+    document.getElementById('protein').value = input.dataset.protein;
+    document.getElementById('fat').value = input.dataset.fat;
+    document.getElementById('eaten').value = "0";
+    
+    refreshCaloriesData();
+    document.getElementById('products').innerHTML = ""; // hidden suggest
+    
+}
+
+function refreshCaloriesData(){
+
+    var weight = parseFloat(document.getElementById("weight").value);
+    var fat = parseFloat(document.getElementById("fat").value);
+    var carbohydrates = parseFloat(document.getElementById("carbohydrates").value);
+    var protein = parseFloat(document.getElementById("protein").value);
+    var eaten = parseFloat(document.getElementById("eaten").value);
+
+
+    var calIn100g = document.getElementById("calIn100g");
+    var calEaten = document.getElementById("calEaten");
+    calIn100g.innerText = fat*9+(carbohydrates+protein)*4;
+    calEaten.innerText = calIn100g.innerText*(eaten/weight);
+}
+function addProductAndEaten(){
+    var eaten = document.getElementById("eaten").value;
+
+    addProductOrGetId().then(function(product_id){
+        ajax('/dieta/index.php?action=addEaten&product_id=' + product_id.text + '&eaten=' + eaten ).then(function(data){
+            //alert(data.text);
+            console.log(data.text);
+            refreshList();
+        });
+    });
+}
+
+function addProductOrGetId(){
+    
+    var product_id = document.getElementById("product_id").value;
+    var name = document.getElementById("name").value;
+    var weight = document.getElementById("weight").value;
+    var fat = document.getElementById("fat").value;
+    var carbohydrates = document.getElementById("carbohydrates").value;
+    var protein = document.getElementById("protein").value;
+
+
+    if( product_id == -1 ){
+        return ajax('/dieta/index.php?action=addProduct&name=' + name + '&weight=' + weight + '&carbohydrates=' + carbohydrates + '&protein=' + protein + '&fat=' + fat)
+    }
+    else{
+        return Promise.resolve({text : product_id});
+    }
+
+}
+
+function getList(){
+    return new Promise(function(resolve, reject){
+        ajax('/dieta/index.php?action=getEaten').then(function(data){
+            resolve(JSON.parse(data.text));//if not login error parse
+            document.getElementById("formLoginAndCreate").style.display = "none";
+            document.getElementById("allTables").style.display = "block";
+        });
+    })
+    
+}
+
+function getWeight(){
+    return new Promise(function(resolve, reject){
+        ajax('/dieta/index.php?action=getWeight').then(function(data){
+            resolve(JSON.parse(data.text));//if not login error parse
+        });
+    })
+    
+}
+function accountUpdate(){
+    var weight = document.getElementById("newWeight").value;
+    var calc = document.getElementById("newCalc").value;
+
+    ajax('/dieta/index.php?action=updateUser&weight=' + weight + '&calc=' + calc ).then(function(data){
+        refershAccountData();
+    });
+}
+function refershAccountData(){
+    getWeight().then(function(data){
+        console.log("waga", data)
+
+        document.getElementById("newWeight").value = data.weight;
+        document.getElementById("newCalc").value = data.calc;
+
+        document.getElementById("eatenFatMin").innerText = data.weight * 0.5;
+        document.getElementById("eatenFatMax").innerText = data.weight;
+        document.getElementById("eatenProteinMin").innerText = data.weight;
+        document.getElementById("eatenProteinMax").innerText = data.weight * 1.8;
+
+        document.getElementById("eatenCarbohydratesMax").innerText = (data.calc - (((data.weight*0.5)*9) + (data.weight * 4)))/4;
+        document.getElementById("eatenCarbohydratesMin").innerText = (data.calc - (((data.weight*1.8)*4) + (data.weight * 9)))/4;
+
+    });
+}
+function refreshList(){
+    refershAccountData();
+    getList().then(function(products){
+        console.log("refreshList", products);
+        var html = "";
+        var sumCal = 0;
+        var sumWeight = 0;
+        var sumFat = 0;
+        var sumProt = 0;
+        var sumCarbon = 0;
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            var calIn100g = product.fat*9+(parseFloat(product.carbohydrates)+parseFloat(product.protein))*4;
+            var eatenCal = calIn100g*(product.weight/100);
+            sumCal += eatenCal;
+            sumWeight += parseFloat(product.weight);
+            sumFat += product.fat*(product.weight/100);
+            sumProt += product.protein*(product.weight/100);
+            sumCarbon += product.carbohydrates*(product.weight/100);
+            html += "<tr>";
+            html += "<td>"+product.time+"</td>";
+            html += "<td>"+product.name+"</td>";
+            html += "<td>100</td>";
+            html += "<td>"+product.fat+"</td>";
+            html += "<td>"+product.carbohydrates+"</td>";
+            html += "<td>"+product.protein+"</td>";
+            html += "<td>"+(calIn100g.toFixed(2))+"</td>";
+            html += "<td>"+product.weight+"</td>";
+            html += "<td>"+eatenCal.toFixed(2)+"</td>";
+            html += '<td><div style="cursor:pointer" class="btn btn-danger" onclick="deleteEaten('+product.eaten_id+')">usun</div></td>';
+            html += "</tr>";
+        }
+
+            html += "<tr>";
+            html += '<td colspan="2">SUMA</td>';
+            html += "<td>100</td>";
+            html += '<td><i class="mdi mdi-hamburger"></i> </td>';
+            html += '<td><i class="mdi mdi-candycane"></i></td>';
+            html += '<td><i class="mdi mdi-leaf"></i></td>';
+            html += '<td><i class="mdi mdi-battery-charging-80"></i></td>';
+            html += '<td>'+sumWeight.toFixed(2)+'</td>';
+            html += "<td>"+sumCal.toFixed(2)+"</td>";
+            html += "<td></td>";
+            html += "</tr>";
+
+
+        document.getElementById("divCalcIn100").innerText =  ((sumCal / sumWeight) * 100).toFixed(2);
+        var tableData = document.getElementById("tableData");
+        tableData.innerHTML = html;
+
+        document.getElementById("eatenFat").innerText = sumFat;
+        document.getElementById("eatenProtein").innerText = sumProt;
+        document.getElementById("eatenCarbohydrates").innerText = sumCarbon;
+    })
+}
+
+function getAllDays(){
+
+    ajax('/dieta/index.php?action=getDays').then(function(data){
+        var days = JSON.parse(data.text);
+
+         for (var i = 0; i < days.length; i++) {
+            var day = days[i];
+            var option = document.createElement("option");
+            option.innerText = day.name;
+            option.value = day.ID;
+            document.getElementById("allDays").appendChild(option);
+         }
+    });
+
+}
+
+function ajax(url){
+    return new Promise (function(resolve, reject){
+        var req = new XMLHttpRequest();
+        req.open('GET', url, true);
+        req.onreadystatechange = function () {
+        if (req.readyState == 4) {
+            resolve({
+                status : req.status,
+                text : req.responseText
+            });
+        }
+        };
+        req.send(null);
+    });
+
+}
+
+refreshList();
+
+</script>
